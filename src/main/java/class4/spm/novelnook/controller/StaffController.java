@@ -45,7 +45,7 @@ public class StaffController {
     int randomNum = new Random().nextInt(10) + 1;
     // 将随机数转换为字符串，并拼接到字符串中
     //生成随机的头像
-    String avatarUrl = "avatar/" + randomNum + ".jpg";
+    String avatarUrl = "/avatars/" + randomNum + ".svg";
     @PostMapping("/patron/add/{userid}/{password}/{firstname}/{lastname}/{email}/{telephone}")
     public int AddPatron(@PathVariable("userid") String userid,@PathVariable("password") String password
             ,@PathVariable("firstname" ) String firstname,@PathVariable("lastname") String lastname
