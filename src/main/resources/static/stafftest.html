@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Test</title>
+</head>
+<body>
+
+<div id="response"></div>
+
+<script>
+  var xhr = new XMLHttpRequest();
+
+  // xhr.open("POST", "http://localhost:8080/staff/patron/add/pt01/pw11/li/wang/q@12.com/t001");
+  //xhr.open("DELETE", "http://localhost:8080/staff/patron/delete/pt01");
+  //xhr.open("POST", "http://localhost:8080/staff/material/addNew/BT001/booktest/tyyyy/author-t/1912/class/80/a book");
+  xhr.open("DELETE", "http://localhost:8080/staff/material/delete/BT001");
+
+
+
+
+  xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      var response = JSON.parse(xhr.responseText);
+      document.getElementById("response").innerHTML = response;
+    } else {
+      alert('Request failed.  Returned status of ' + xhr.status);
+    }
+  };
+  xhr.send(JSON.stringify({}));
+</script>
+</body>
+</html>

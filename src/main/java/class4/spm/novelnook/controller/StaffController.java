@@ -37,7 +37,7 @@ public class StaffController {
     }
 
     //根据userid删除用户
-    @GetMapping("/patron/delete/{userid}")
+    @DeleteMapping("/patron/delete/{userid}")
     public int DeletePatron(@PathVariable("userid") String userid) {
         return staffServiceImpl.DeleteParton(userid);
     }
@@ -46,7 +46,7 @@ public class StaffController {
     // 将随机数转换为字符串，并拼接到字符串中
     //生成随机的头像
     String avatarUrl = "avatar/" + randomNum + ".jpg";
-    @GetMapping("/patron/add/{userid}/{password}/{firstname}/{lastname}/{email}/{telephone}")
+    @PostMapping("/patron/add/{userid}/{password}/{firstname}/{lastname}/{email}/{telephone}")
     public int AddPatron(@PathVariable("userid") String userid,@PathVariable("password") String password
             ,@PathVariable("firstname" ) String firstname,@PathVariable("lastname") String lastname
             ,@PathVariable("email") String email,@PathVariable("telephone") String telephone)
@@ -55,13 +55,13 @@ public class StaffController {
     }
 
     //根据bookid删除书籍
-    @GetMapping("/material/delete/{bookid}")
+    @DeleteMapping("/material/delete/{bookid}")
     public int DeleteBook(@PathVariable("bookid") String bookid){
         return staffServiceImpl.DeleteBook(bookid);
     }
 
     //增加新的书籍
-    @GetMapping("/material/addNew/{bookid}/{bookname}/{press}/{author}/{publishtime}/{catagory}/{remain}/{introduction}")
+    @PostMapping("/material/addNew/{bookid}/{bookname}/{press}/{author}/{publishtime}/{catagory}/{remain}/{introduction}")
     public int AddNewBook(@PathVariable("bookid") String bookid, @PathVariable("bookname") String bookname,
                           @PathVariable("press") String press, @PathVariable("author") String author,
                           @PathVariable("publishtime") String publishtime, @PathVariable("catagory") String catagory,
