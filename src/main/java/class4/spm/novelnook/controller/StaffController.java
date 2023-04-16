@@ -69,6 +69,10 @@ public class StaffController {
         return staffServiceImpl.AddNewBook(bookid,bookname,press,author,publishtime,catagory,remain,introduction);
     }
 
-
+    //还书
+    @PutMapping("/material/return/{bookid}/{userid}")
+    public int putBook(@PathVariable("bookid") String bookid, @PathVariable("userid") String userid){
+        return staffServiceImpl.putBookByBookidUserid(bookid,userid);
+    }
 
 }
