@@ -11,7 +11,7 @@ import java.util.List;
 public interface PatronService {
 
     //搜索图书
-    List<Book> searchForBook(String title, String author,String catagory);
+    List<Book> searchForBook(String key, String option);
 
     //获取借阅记录
     List<Borrow> getBorrowList(String userid);

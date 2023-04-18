@@ -23,7 +23,8 @@ public interface PatronMapper {
     List<Book> getBookInfo(String bookid);
 
     //搜索book信息
-    List<Book> searchForBook(String title, String author,String catagory);
+    @Select("select * from book where ${option} like '%${key}%'")
+    List<Book> searchForBook(String key, String option);
 
     //从book表获取remain
     @Select("select remain from book where bookid = #{bookid}")

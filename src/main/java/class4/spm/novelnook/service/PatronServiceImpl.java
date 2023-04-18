@@ -19,12 +19,12 @@ public class PatronServiceImpl implements PatronService{
     PatronMapper patronMapper;
 
     //
-    // 对Controller接口函数
+    // 对Controller接口
     //
 
     //搜索图书
-    public List<Book> searchForBook(String title, String author, String catagory) {
-        return patronMapper.searchForBook(title, author, catagory);
+    public List<Book> searchForBook(String key, String option) {
+        return patronMapper.searchForBook(key, option);
     }
 
     //获取借阅记录
@@ -68,7 +68,7 @@ public class PatronServiceImpl implements PatronService{
 
 
     //
-    // 辅助函数
+    // 辅助方法
     //
 
     //每次借书更新remain，remain为0更新失败，返回0，成功返回1
