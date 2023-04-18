@@ -12,6 +12,7 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/staff")
+@CrossOrigin(origins = "*")
 public class StaffController {
 
     @Autowired
