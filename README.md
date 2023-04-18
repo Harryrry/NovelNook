@@ -1,12 +1,14 @@
 # NovelNook
 
+## 2023.4.18  
+Staff组 Release1  
+http://localhost:8080/staff.html  Library staff面板  
+http://localhost:8080/staff/addMaterial.html 添加书  
+http://localhost:8080/staff/deleteMaterial.html 删除书  
+http://localhost:8080/staff/returnMaterial.html 还书  
+http://localhost:8080/staff/patronManage.html patron管理  
 
 
-## 2023.4.13
-
-Staff组使用patron表、book表、borrow表  
-为目前所有表建立实体类  
-Staff组在线文档[Staff组](https://docs.qq.com/doc/DR2d1aFh6RWJaalVs)
 
 ## 2023.4.16
 
@@ -23,6 +25,14 @@ borrow(borrowid,userid,bookid,borrowtime,deadline,status)
 ```
 reservation(reservationid,userid,bookid,reservationtime,status)
 ```
+
+## 2023.4.13
+
+Staff组使用patron表、book表、borrow表  
+为目前所有表建立实体类  
+Staff组在线文档[Staff组](https://docs.qq.com/doc/DR2d1aFh6RWJaalVs)
+
+
 ## 2023.4.11
 
 数据库设计有变动,Admin组使用staff表,不再使用user表
