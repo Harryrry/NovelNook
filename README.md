@@ -1,12 +1,27 @@
 # NovelNook
 
 ## 2023.4.18  
-Staff组 Release1  
-http://localhost:8080/staff.html  Library staff面板  
-http://localhost:8080/staff/addMaterial.html 添加书  
-http://localhost:8080/staff/deleteMaterial.html 删除书  
-http://localhost:8080/staff/returnMaterial.html 还书  
-http://localhost:8080/staff/patronManage.html patron管理  
+Staff组 Release1
+
+1. http://localhost:8080/staff.html  Library staff面板
+
+    back to franpage会转到index.html，可修改为其他页面
+
+2. http://localhost:8080/staff/addMaterial.html 添加书 
+
+    在book表中添加一整行记录
+
+3. http://localhost:8080/staff/deleteMaterial.html 删除书 
+
+    在book表中删除一整行记录
+
+4. http://localhost:8080/staff/returnMaterial.html 还书 
+
+    book表remain+1    borrow表status变为returned
+
+5. http://localhost:8080/staff/patronManage.html patron管理 
+
+    patron账户的展示、增删
 
 
 
