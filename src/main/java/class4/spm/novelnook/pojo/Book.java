@@ -16,6 +16,7 @@ public class Book {
     String publishtime;
     String catagory;
     int remain;
+
     String introduction;
 
 }

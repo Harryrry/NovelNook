@@ -4,7 +4,10 @@ import class4.spm.novelnook.mapper.AdminMapper;
 import class4.spm.novelnook.pojo.Staff;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.GetExchange;
+import tool.R;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -19,17 +22,62 @@ public class AdminController {
     }
 
 
-//    @GetMapping("/staff")
-//    public Staff getStaff(){
+    @GetMapping("/staff")
+    public R<List<Staff>> getStaff(){//展示列表界面
+        List<Staff> list = adminMapper.ShowStaff();
+        return R.success(list);
+
+    }
+//    @GetMapping("/staff/{username}")
+//    public List<Staff> getStaffByUsername(@PathVariable("username") String username){//列表界面查找
+//        System.out.println(username);
+//        List<Staff> list=adminMapper.getStaffByUserName(username);
+//        if (list.isEmpty()) {
+//            list.add(new Staff("can't", "find", "this", "User", " ", " "," "));
+//        }
+//        return list;
 //    }
+
     @GetMapping("/staff/{username}")
-    public List<Staff> getStaffByUsername(@PathVariable("username") String username){
+    public R<List<Staff>>  getStaffByUsername(@PathVariable("username") String username){//列表界面查找
         System.out.println(username);
         List<Staff> list=adminMapper.getStaffByUserName(username);
-//        if (list.isEmpty()){
-//            list.add(new Staff("sjh","123","Darth","Vader","123456","1@empire.com"));
-//        }
-        return list;
+//        R<Staff> r = (R<Staff>) list;
+        if (list.isEmpty()) {
+            return R.error("查无此人");
+        }
+        return R.success(list);
+//        r.success(list);
+//        return r.success(list);
+    }
+
+    @DeleteMapping("/staff/{username}")
+    public R<List<Staff>> deleteStaffByUsername(@PathVariable("username") String username){//列表界面删除
+        System.out.println(username);
+        List<Staff> l  = adminMapper.getStaffByUserName(username);
+        List<Staff> list = adminMapper.deleteStaffByUserName(username);
+        if (l == null) {
+            return R.error("删除失败");
+        }
+        else return R.success(list);
+    }
+    
+    /**
+     * update function
+     * @param staff param got from json data in RequestBody
+     * @return
+     */
+    @PutMapping("/staff")
+    public R update(@RequestBody Staff staff) {
+        //flag is used to judge whether operation is success
+        int flag = adminMapper.updateByUserName(staff);
+
+        if(flag > 0) {
+            return R.success(null);
+        }
+
+        return R.error("update fail");
+
     }
 
 }
