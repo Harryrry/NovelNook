@@ -30,4 +30,7 @@ public interface StaffService {
     //删书
     int DeleteBook (String bookid);
 
+    //还书
+    int putBookByBookidUserid(String bookid, String userid);
+
 }

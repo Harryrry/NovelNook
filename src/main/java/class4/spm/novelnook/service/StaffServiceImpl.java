@@ -53,6 +53,12 @@ public class StaffServiceImpl implements StaffService {
         return staffMapper.DeleteBook(bookid);
     }
 
+    //还书 实现
+    @Override
+    public int putBookByBookidUserid(String bookid, String userid){
+        return staffMapper.putBookByBookid(bookid) & staffMapper.putBookByBookidUserid(bookid, userid);
+    }
+
 
 
 }
