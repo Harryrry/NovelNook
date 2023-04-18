@@ -14,41 +14,36 @@
       font-size: 20px;
     }
     /* 为每个按钮设置不同的位置 */
-    #page1 {
+    #addMaterial {
       top: 200px;
-      left: 100px;
+      left: 200px;
     }
-    #page2 {
+    #deleteMaterial {
       top: 200px;
-      left: 500px;
+      left: 600px;
     }
-    #page3 {
-      top: 200px;
-      left: 900px
+    #returnMaterial {
+      top: 350px;
+      left: 200px
     }
-    #page4 {
-      top: 400px;
-      left: 100px;
+    #patronManage {
+      top: 500px;
+      left: 200px;
     }
-    #page5 {
-      top: 400px;
-      left: 500px;
-    }
-    #logout {
+    #back {
       top: 600px;
-      left: 1200px;
+      left: 1000px;
     }
   </style>
 </head>
 <body>
 <h1>Library Staff Panel</h1>
 <div class="button-container">
-  <button id="page1" onclick="location.href='page1.html'">Add new Materials</button>
-  <button id="page2" onclick="location.href='page2.html'">Delete Material</button>
-  <button id="page3" onclick="location.href='page3.html'">Return Material</button>
-  <button id="page4" onclick="location.href='page4.html'">Patron Manage</button>
-  <button id="page5" onclick="location.href='page5.html'">页面5</button>
-  <button id="logout" onclick="location.href='index.html'">Log Out</button>
+  <button id="addMaterial" onclick="location.href='staff/addMaterial.html'">Add Material</button>
+  <button id="deleteMaterial" onclick="location.href='staff/deleteMaterial.html'">Delete Material</button>
+  <button id="returnMaterial" onclick="location.href='staff/returnMaterial.html'">Return Material</button>
+  <button id="patronManage" onclick="location.href='staff/patronManage.html'">Patron Manage</button>
+  <button id="back" onclick="location.href='index.html'">Back to Front Page</button>
 </div>
 </body>
 </html>
