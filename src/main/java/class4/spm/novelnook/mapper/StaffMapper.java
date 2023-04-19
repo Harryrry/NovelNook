@@ -46,4 +46,10 @@ public interface StaffMapper {
                    @Param("publishtime") String publishtime, @Param("catagory")String catagory,
                    @Param("remain") int remain, @Param("introduction")String introduction);
 
+    //还书
+    @Update("UPDATE book SET remain = remain+1 WHERE bookid= #{bookid};")
+    int putBookByBookid (String bookid);
+    @Update("UPDATE borrow SET status = 'returned' WHERE bookid=#{bookid} and userid=#{userid};")
+    int putBookByBookidUserid (@Param("bookid") String bookid, @Param("userid") String userid);
+
 }

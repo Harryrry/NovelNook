@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Vue脚手架 ###
+node_modules/
+
+
